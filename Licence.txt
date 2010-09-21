@@ -1,0 +1,2 @@
+-
+que des 0 dans BDGest, avec le mock de droits, demarrage et accueil ca marche nickel pour la V7
