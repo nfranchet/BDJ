@@ -27,7 +27,7 @@ public class AlbumsService extends BDJService {
 
 	public List<AlbumResumeDTO> getAlbumResume(Integer identifiant) throws BDJException {
 		// TODO : ajouter la partie mock ici
-		String album = (new String(ProxyService.getInstance().getAlbumResume("http://www.bedetheque.com/bdgest7/bel_album_resume.php?IdSerie="+identifiant))).trim();
+		String album = (new String(ProxyService.getInstance().getAlbumResume("http://194.146.224.74/bdgest7/bel_album_resume.php?IdSerie="+identifiant))).trim();
 		if (album.startsWith("[DEBUT]") && album.endsWith("[FIN]")) {
 			album = album.substring("[DEBUT]".length(),album.length()-"[FIN]".length());
 			// Chaque ligne de resultat est séparé par  ##

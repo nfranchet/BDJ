@@ -24,8 +24,8 @@ public class ProxyService {
 	
 	private static ProxyService _instance;
 
-	private static final String URL_BASE_V7 = "http://www.bedetheque.com/";
-	private static final String URL_BASE_V6 = "http://www.bedetheque.com/bdgest6proxy/";
+	private static final String URL_BASE_V7 = "http://194.146.224.74/";
+	private static final String URL_BASE_V6 = "http://194.146.224.74/bdgest6proxy/";
 	private static boolean saveData = true;
 
 	private static ContentGrabber contentGrabber = null;

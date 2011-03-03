@@ -18,8 +18,8 @@ public abstract class BDJService {
 	
 	private static Logger _LOGGER = Logger.getLogger(BDJService.class.getCanonicalName());
 	
-	private static final String URL_LISTE_OBJECT_A = "http://www.bedetheque.com/bdgest7/bel_series.php?";
-	private static final String URL_LISTE_OBJECT_B = "http://www.bedetheque.com/bdgest7/bel_revues.php?";
+	private static final String URL_LISTE_OBJECT_A = "http://194.146.224.74/bdgest7/bel_series.php?";
+	private static final String URL_LISTE_OBJECT_B = "http://194.146.224.74/bdgest7/bel_revues.php?";
 
 	public List<ListeObjectsDTO> getListeObject(String lettre, String langue, ObjectType type) throws BDJException {
 		if (lettre.equals(" ")) {

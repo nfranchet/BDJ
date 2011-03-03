@@ -31,7 +31,7 @@ public class RevuesService extends BDJService {
 		String url;
 		try {
 			nom = new String ( nom.getBytes(), "UTF8" );
-			url = "http://www.bedetheque.com/bdgest7/bel_revue.php?revue="+URLEncoder.encode(nom, "UTF8");
+			url = "http://194.146.224.74/bdgest7/bel_revue.php?revue="+URLEncoder.encode(nom, "UTF8");
 		} catch (UnsupportedEncodingException e) {
 			throw new BDJException("[ERROR] Encoding error [ERROR]");
 		}

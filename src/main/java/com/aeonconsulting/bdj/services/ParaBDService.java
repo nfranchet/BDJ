@@ -27,7 +27,7 @@ public class ParaBDService extends BDJService {
 	
 
 	public List<ParaBDDTO> getParaBD(Integer identifiant) throws BDJException {
-		String url="http://www.bedetheque.com/bdgest7/bel_parabd.php?IdSerie="+identifiant;
+		String url="http://194.146.224.74/bdgest7/bel_parabd.php?IdSerie="+identifiant;
 		String paraBDs= new String(ProxyService.getInstance().getParaBd(url)).trim();
 		if (paraBDs.startsWith("[DEBUT]") && paraBDs.endsWith("[FIN]")) {
 			paraBDs = paraBDs.substring("[DEBUT]".length(),paraBDs.length()-"[FIN]".length());

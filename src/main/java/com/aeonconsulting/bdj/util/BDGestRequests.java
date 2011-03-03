@@ -27,8 +27,8 @@ public enum BDGestRequests {
 	UNKNOWN("")
 	;
 	
-	private static String BASE_VERSION_6 = "http://www.bedetheque.com/bdgest6proxy/";
-	private static String BASE_VERSION_7 = "http://www.bedetheque.com/bdgest7/";
+	private static String BASE_VERSION_6 = "http://194.146.224.74/bdgest6proxy/";
+	private static String BASE_VERSION_7 = "http://194.146.224.74/bdgest7/";
 //	private static Integer VERSION_6 = 6;
 //	private static Integer VERSION_7 = 7;
 //	private static Integer VERSION_ALL = 0;
