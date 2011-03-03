@@ -1,0 +1,26 @@
+.button {
+	color:red;
+}
+
+.ligneType0 {
+	background-color: #999999;
+}
+
+.ligneType1 {
+	background-color: #CCCCCC;
+}
+
+#response {
+	height:700px;
+	overflow-x:hidden;
+	overflow-y:auto;
+	width:300px;
+}
+
+#listeResume {
+	width : 900px;
+	height : 700px;
+	overflow-x:auto;
+	overflow-y:auto;
+
+}
