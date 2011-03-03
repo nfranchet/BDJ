@@ -64,7 +64,17 @@ public class DefaultContentGrabber implements ContentGrabber {
 				while ((read = reader.read(buf)) > 0) {
 					sb.append(buf, 0, read);
 				}
-			} finally {
+				try {
+					reader.close();
+				} catch (Exception e) {
+					// Nothing to do
+				}
+				try {
+					is.close();
+				} catch (Exception e) {
+					// Nothing to do
+				}
+			} finally {			
 				connection.disconnect();
 			}
 

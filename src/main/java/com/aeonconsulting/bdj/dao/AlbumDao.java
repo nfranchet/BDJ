@@ -18,16 +18,34 @@ public class AlbumDao extends GenericDao {
 	 */
 	public Albums getByIdBel(Integer idBel) throws BDJException {
 		String query = "SELECT * from Albums where idBel = ?";
+		PreparedStatement stmt = null;
+		ResultSet result  = null;
 		try {
-			PreparedStatement stmt = getConnection().prepareStatement(query);
+			stmt = getConnection().prepareStatement(query);
 			stmt.setInt(1, idBel);
-			ResultSet result = stmt.executeQuery();
+			result = stmt.executeQuery();
 			// On verifie que l'on a bien qu'un seul objet
-			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			throw new BDJException("Erreur DB ",e);
+		} finally {
+			if (result != null) {
+				try {
+					result.close();
+					result = null;
+				} catch (Exception e) {
+					// Nothing to do
+				}
+			}
+			if (stmt != null) {
+				try {
+					stmt.close();
+					stmt = null;
+				} catch (Exception e) {
+					// Nothing to do
+				}
+			}
 		}
 		return null;
 	}

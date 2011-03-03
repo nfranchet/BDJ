@@ -33,7 +33,7 @@ public class ProxyService {
 	private ProxyService() {
 	}
 
-	public static ProxyService getInstance() {
+	public synchronized static ProxyService getInstance() {
 		if (_instance == null) {
 			_instance = new ProxyService();
 			_instance.setSaveData(false);

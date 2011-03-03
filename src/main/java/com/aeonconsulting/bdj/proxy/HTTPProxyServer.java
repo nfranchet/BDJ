@@ -99,7 +99,7 @@ public class HTTPProxyServer extends Thread {
 
 	public static void main(String[] args) {
 		try {
-			new HTTPProxyServer().run();
+			new HTTPProxyServer().start();
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
 		} catch (IOException e) {

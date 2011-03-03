@@ -94,8 +94,7 @@ public class BeanUtil {
 		Map<String, Object> values = getValues(obj);
 		StringBuffer sortie = new StringBuffer();
 		boolean sep = false;
-		for (String key : values.keySet()) {
-			Object value = values.get(key);
+		for (Object value : values.entrySet()) {
 			if (value == null) {
 				sortie.append("");
 			} else if (value instanceof Boolean) {

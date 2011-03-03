@@ -32,9 +32,11 @@ public class GenericDao {
 	}
 	
 	public Integer getVersion() throws BDJException {
+		Statement stmt = null;
+		ResultSet result  = null;
 		try {
-			Statement stat = getConnection().createStatement();
-			ResultSet result = stat.executeQuery("select version from Version");
+			stmt = getConnection().createStatement();
+			result = stmt.executeQuery("select version from Version");
 			// On recupere la version
 			return result.getInt("version");
 		} catch (SQLException e) {
@@ -45,6 +47,23 @@ public class GenericDao {
 				return createDB();
 			} else {
 				return -1;
+			}
+		} finally {
+			if (result != null) {
+				try {
+					result.close();
+					result = null;
+				} catch (Exception e) {
+					// Nothing to do
+				}
+			}
+			if (stmt != null) {
+				try {
+					stmt.close();
+					stmt = null;
+				} catch (Exception e) {
+					// Nothing to do
+				}
 			}
 		}
 
@@ -59,9 +78,9 @@ public class GenericDao {
 		//TODO: mettre cette information qqpart
 		Integer version = 1;
 		// On lit le fichier de creation de la BD
-		
+		Statement stmt = null;
 		try {
-			Statement stmt = _connection.createStatement();
+			stmt = _connection.createStatement();
 			// On cree la table
 			stmt.executeUpdate(DB_VERSION_1.createVersionQuery());
 			stmt.executeUpdate(DB_VERSION_1.createAlbumsQuery());
@@ -70,6 +89,15 @@ public class GenericDao {
 			stmt.executeUpdate("INSERT INTO Version VALUES ("+version+")");
 		} catch (SQLException e) {
 			throw new BDJException("Error de BD",e);
+		} finally {			
+			if (stmt != null) {
+				try {
+					stmt.close();
+					stmt = null;
+				} catch (Exception e) {
+					// Nothing to do
+				}
+			}
 		}
 		
 		return version;
